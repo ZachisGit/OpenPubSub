@@ -23,7 +23,7 @@ mkdir ipfs
 mkdir ipfs/staging
 mkdir ipfs/data
 
-echo docker run -d --name ipfs-base --restart always -v $(realpath ipfs/staging):/export -v $(realpath ipfs/data):/data/ipfs -p 4001:4001 -p 4001:4001 ipfs/kubo:latest daemon --migrate=true --agent-version-suffix=docker --enable-pubsub-experiment > start.sh
+echo docker run -d --name ipfs-base --restart always -v $(realpath ipfs/staging):/export -v $(realpath ipfs/data):/data/ipfs -p 4001:4001 -p 4001:4001/udp -p 8080:8080 -p 5001:5001 ipfs/kubo:latest daemon --migrate=true --agent-version-suffix=docker --enable-pubsub-experiment > start.sh
 
 chmod +x start.sh
 ./start.sh

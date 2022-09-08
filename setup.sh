@@ -29,7 +29,9 @@ chmod +x start.sh
 ./start.sh
 
 
-echo "Changing config (10 sec)..."
-sleep 10
-docker exec -ti ipfs-base ipfs config API.HTTPHeaders '{"Access-Control-Allow-Methods": ["PUT","GET","POST"], "Access-Control-Allow-Origin": ["*"]}' --json
-docker exec -it ipfs-base ipfs config Gateway.APICommands '["/api/v0/pubsub/sub","pubsub/sub","/api/v0/pubsub/pub","pubsub/pub"]' --json
+echo "Changing config (3 sec)..."
+sleep 3
+docker exec -i ipfs-base ipfs config API.HTTPHeaders '{"Access-Control-Allow-Methods": ["PUT","GET","POST"], "Access-Control-Allow-Origin": ["*"]}' --json
+docker exec -i ipfs-base ipfs config Gateway.APICommands '["/api/v0/pubsub/sub","pubsub/sub","/api/v0/pubsub/pub","pubsub/pub"]' --json
+
+docker exec -i ipfs-base ipfs shutdown

@@ -4,6 +4,8 @@ A cluster of free IPFS nodes with the PubSub API port open and for anyone to use
 ### Endpoint
     nodes.openpubsub.com
 
+### Website
+http://openpubsub.com
 
 ## Python usage example
 ```python
